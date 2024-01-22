@@ -1,0 +1,76 @@
+﻿@model IEnumerable<Quan_Ly_Sinh_Vien.Database.MonHoc>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<div class="container-fluid">
+
+    <!--page heading-->
+    <h1 class="h3 mb-2 text-gray-800"> Môn Học</h1>
+    <div class ="card shadow mb-4">
+        <div class = "card-header py-3">
+            <h6 class = "m-0 font-weight-bold text-primary">Danh Mục Môn Học</h6>
+        </div>
+        <div class=" card-body">
+            <div class="table-responsive">
+                <p>
+                    <a asp-action="Create" class="btn btn-primary">Create New</a>
+                </p>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.MaMonHoc)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.TenMonHoc)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.SoTinChi)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.HocKy)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.MaGiangVien)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.GiangVienPhuTrach)
+                            </th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                @foreach (var item in Model) {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.MaMonHoc)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.TenMonHoc)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.SoTinChi)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.HocKy)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.MaGiangVien)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.GiangVienPhuTrach)
+                            </td>
+                            <td>
+                                <a asp-action="Edit" asp-route-id="@item.MaMonHoc">Edit</a> 
+                                <a asp-action="Details" asp-route-id="@item.MaMonHoc">Details</a> 
+                                <a asp-action="Delete" asp-route-id="@item.MaMonHoc">Delete</a>
+                            </td>
+                        </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

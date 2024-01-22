@@ -1,0 +1,70 @@
+﻿@model IEnumerable<Quan_Ly_Sinh_Vien.Database.HocPhi>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <h1 class="h3 mb-2 text-gray-800">Bảng Học Phí</h1>
+    <!-- DataTales Example -->
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Quản Lý Học Phí Sinh Viên</h6>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+
+                <p>
+                    <a asp-action="Create" class="btn btn-primary">Tạo mới</a>
+                </p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TenSinhVien)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SoTien)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NgayThanhToan)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HinhThucThanhToan)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MaSinhVienNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TenSinhVien)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SoTien)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NgayThanhToan)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HinhThucThanhToan)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaSinhVienNavigation.HoTen)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.MaHocPhi">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.MaHocPhi">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.MaHocPhi">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

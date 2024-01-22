@@ -1,0 +1,97 @@
+﻿@model IEnumerable<Quan_Ly_Sinh_Vien.Database.DiemHocPhan>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <h1 class="h3 mb-2 text-gray-800">Bảng Điểm</h1>
+    <!-- DataTales Example -->
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Quản Lý Điểm Sinh Viên</h6>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+
+                <div class="d-flex justify-content-between mb-3">
+                    <form asp-controller="DiemHocPhan" asp-action="Index" method="get" class="mr-3">
+                        <div class="input-group">
+                            <input type="text" name="searchString" class="form-control" placeholder="Tìm kiếm" />
+                            <div class="input-group-append">
+                                <button type="submit" class="btn btn-primary">Tìm kiếm</button>
+                            </div>
+                        </div>
+                    </form>
+                    <p class="mb-0">
+                        <a asp-action="Create" class="btn btn-primary">Create New</a>
+                    </p>
+                </div>
+                <h2>Danh sách điểm</h2>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Diem)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.LanThi)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.GhiChu)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.MaMonHocNavigation)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.MaMonHoc)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.MaSinhVienNavigation)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.MaSinhVien)
+                            </th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Diem)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.LanThi)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.GhiChu)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.MaMonHocNavigation.TenMonHoc)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.MaMonHocNavigation.MaMonHoc)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.MaSinhVienNavigation.HoTen)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.MaSinhVienNavigation.MaSinhVien)
+                                </td>
+                                <td>
+                                    <a asp-action="Edit" class="btn btn-primary" asp-route-id="@item.MaDiem">Edit</a> |
+                                    <a asp-action="Details" class="btn btn-primary" asp-route-id="@item.MaDiem">Details</a> |
+                                    <a asp-action="Delete" class="btn btn-danger" asp-route-id="@item.MaDiem">Delete</a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>

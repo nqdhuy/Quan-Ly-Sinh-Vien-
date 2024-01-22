@@ -1,0 +1,120 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+        <!-- Sidebar - Brand -->
+        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="@Url.Action("Index", "Home")">
+            <div class="sidebar-brand-icon rotate-n-15">
+                <i class="fas fa-laugh-wink"></i>
+            </div>
+            <div class="sidebar-brand-text mx-3">QL_SinhVien</div>
+        </a>
+
+        <!-- Divider -->
+        <hr class="sidebar-divider my-0">
+
+        <!-- Nav Item - Dashboard -->
+        <li class="nav-item active">
+            <a class="nav-link" href="@Url.Action("Index", "Home")">
+                <i class="fas fa-fw fa-home"></i>
+                <span>Home</span>
+            </a>
+        </li>
+        <!-- Divider -->
+        <hr class="sidebar-divider">
+
+        <!-- Nav Item - QuanLy -->
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseQuanLy"
+               aria-expanded="true" aria-controls="collapseQuanLy">
+                <i class="fas fa-fw fa-cogs"></i>
+                <span>Danh Mục Quản Lý</span>
+            </a>
+            <div id="collapseQuanLy" class="collapse" aria-labelledby="headingQuanLy" data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+
+                    <!-- Nav Item - LopHoc -->
+                    @Html.ActionLink("Lớp học", "Index", "LopHoc",null, new { @class = "collapse-item" })
+
+                    <!-- Nav Item - MonHoc -->
+                    @Html.ActionLink("Môn học", "Index", "MonHoc", null, new { @class = "collapse-item" })
+
+                    <!-- Nav Item - SinhVien -->
+                    @Html.ActionLink("Sinh viên", "Index", "SinhVien", null, new { @class = "collapse-item" })
+
+                    <!-- Nav Item - LichHoc -->
+                    @Html.ActionLink("Lịch học", "Index", "LichHoc", null, new { @class = "collapse-item" })
+
+                    <!-- Nav Item - Diem -->
+                    @Html.ActionLink("Điểm", "Index", "DiemHocPhan", null, new { @class = "collapse-item" })
+
+                    <!-- Nav Item - HocPhi -->
+                    @Html.ActionLink("Học phí", "Index", "HocPhi", null, new { @class = "collapse-item" })
+                    <!-- Nav Item - DangKy -->
+                    @Html.ActionLink("Đăng Ký", "Index", "DangKy", null, new { @class = "collapse-item" })
+                    <!-- Nav Item - DangNhap -->
+                    @Html.ActionLink("Đăng Nhập", "Index", "DangNhap", null, new { @class = "collapse-item" })
+                </div>
+            </div>
+        </li>
+        <!-- Divider -->
+        <hr class="sidebar-divider d-none d-md-block">
+        <!-- Nav Item - LopHoc -->
+        <li class="nav-item">
+            <a class="nav-link" href="@Url.Action("Index", "LopHoc")">
+                <i class="fas fa-fw fa-chalkboard"></i>
+                <span>Lớp học</span>
+            </a>
+        </li>
+
+        <!-- Nav Item - MonHoc -->
+        <li class="nav-item">
+            <a class="nav-link" href="@Url.Action("Index", "MonHoc")">
+                <i class="fas fa-fw fa-book"></i>
+                <span>Môn học</span>
+            </a>
+        </li>
+        <!-- Nav Item - SinhVien -->
+        <li class="nav-item">
+            <a class="nav-link" href="@Url.Action("Index", "SinhVien")">
+                <i class="fas fa-fw fa-user-graduate"></i>
+                <span>Sinh viên</span>
+            </a>
+        </li>
+        <!-- Nav Item - LichHoc -->
+        <li class="nav-item">
+            <a class="nav-link" href="@Url.Action("Index", "LichHoc")">
+                <i class="fas fa-fw fa-calendar-alt"></i>
+                <span>Lịch học</span>
+            </a>
+        </li>
+        <!-- Nav Item - Diem -->
+        <li class="nav-item">
+            <a class="nav-link" href="@Url.Action("Index", "DiemHocPhan")">
+                <i class="fas fa-fw fa-clipboard"></i>
+                <span>Điểm</span>
+            </a>
+        </li>
+        <!-- Nav Item - HocPhi -->
+        <li class="nav-item">
+            <a class="nav-link" href="@Url.Action("Index", "HocPhi")">
+                <i class="fas fa-fw fa-dollar-sign"></i>
+                <span>Học phí</span>
+            </a>
+        </li>
+
+        <!-- Divider -->
+        <hr class="sidebar-divider d-none d-md-block">
+        <!-- Sidebar Toggler (Sidebar) -->
+        <div class="text-center d-none d-md-inline">
+            <button class="rounded-circle border-0" id="sidebarToggle"></button>
+        </div>
+    </ul>
+</body>
+</html>

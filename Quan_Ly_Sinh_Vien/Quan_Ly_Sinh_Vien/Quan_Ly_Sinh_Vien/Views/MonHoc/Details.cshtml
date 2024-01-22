@@ -1,0 +1,64 @@
+﻿@model Quan_Ly_Sinh_Vien.Database.MonHoc
+
+@{
+    ViewData["Title"] = "Details";
+}
+<div class="container-fluid">
+
+        <!-- Page Heading -->
+        <h1 class="h3 mb-2 text-gray-800">Môn Học</h1>
+        <!-- DataTales Example -->
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">Danh Mục Môn Học</h6>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                <h4>Details</h4>
+
+                <div>
+                    <h4>Môn Học</h4>
+                    <hr />
+                    <dl class="row">
+                        <dt class = "col-sm-2">
+                            @Html.DisplayNameFor(model => model.TenMonHoc)
+                        </dt>
+                        <dd class = "col-sm-10">
+                            @Html.DisplayFor(model => model.TenMonHoc)
+                        </dd>
+                        <dt class = "col-sm-2">
+                            @Html.DisplayNameFor(model => model.SoTinChi)
+                        </dt>
+                        <dd class = "col-sm-10">
+                            @Html.DisplayFor(model => model.SoTinChi)
+                        </dd>
+                        <dt class = "col-sm-2">
+                            @Html.DisplayNameFor(model => model.HocKy)
+                        </dt>
+                        <dd class = "col-sm-10">
+                            @Html.DisplayFor(model => model.HocKy)
+                        </dd>
+                        <dt class = "col-sm-2">
+                            @Html.DisplayNameFor(model => model.MaGiangVien)
+                        </dt>
+                        <dd class = "col-sm-10">
+                            @Html.DisplayFor(model => model.MaGiangVien)
+                        </dd>
+                        <dt class = "col-sm-2">
+                            @Html.DisplayNameFor(model => model.GiangVienPhuTrach)
+                        </dt>
+                        <dd class = "col-sm-10">
+                            @Html.DisplayFor(model => model.GiangVienPhuTrach)
+                        </dd>
+                    </dl>
+                    <div>
+                        <a asp-action="Edit" asp-route-id="@Model.MaMonHoc">Edit</a> |
+                        <a asp-action="Index">Back to List</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
